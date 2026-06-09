@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exemplo de Cookies - Idioma</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <header>
+        <h1 data-i18n="title">Bem-vindo</h1>
+        <p data-i18n="subtitle">Personalize o idioma da interface com cookies.</p>
+      </header>
+
+      <div class="controls">
+        <label for="language-select" data-i18n="chooseLanguage">Escolha o idioma:</label>
+        <select id="language-select">
+          <option value="pt">Português</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+
+      <div class="content">
+        <p data-i18n="description">
+          Este exemplo salva sua preferência em um cookie. Na próxima vez,
+          o site carregará no idioma escolhido automaticamente.
+        </p>
+        <ul>
+          <li data-i18n="point1">Texto da interface ajustado dinamicamente.</li>
+          <li data-i18n="point2">O cookie expira em 30 dias.</li>
+          <li data-i18n="point3">Pode mudar a linguagem a qualquer momento.</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <button id="reset-button" class="button secondary" data-i18n="resetButton">
+          Redefinir idioma
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
