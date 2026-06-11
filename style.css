@@ -1,3 +1,4 @@
+/* Variáveis CSS usadas em toda a página */
 :root {
   --bg: #e8e5ff;
   --card: #f7f3ff;
@@ -8,10 +9,12 @@
   --muted: #5b4db9;
 }
 
+/* Todos os elementos usem box-sizing*/
 * {
   box-sizing: border-box;
 }
 
+/* Estilos do body */
 body {
   margin: 0;
   min-height: 100vh;
@@ -21,12 +24,14 @@ body {
   text-align: center;
 }
 
+/*Limita a largura e centraliza o conteúdo */
 .container {
   max-width: 740px;
   margin: 0 auto;
   padding: 48px 16px;
 }
 
+/* Card branco com borda arredondada e sombra suave */
 .card {
   background: var(--card);
   border: 1px solid var(--border);
@@ -35,12 +40,14 @@ body {
   padding: 36px 28px;
 }
 
+/* Título principal com espaçamento e tamanho responsivo */
 header h1 {
   margin: 0 0 12px;
   font-size: clamp(2rem, 3vw, 2.75rem);
   letter-spacing: 0.03em;
 }
 
+/* Parágrafo do cabeçalho com cor suave */
 header p {
   margin: 0;
   color: var(--muted);
@@ -48,6 +55,7 @@ header p {
   font-size: 1.05rem;
 }
 
+/* Controles de idioma com espaçamento e alinhamento central */
 .controls {
   margin: 28px auto 20px;
   display: inline-flex;
@@ -57,11 +65,13 @@ header p {
   justify-content: center;
 }
 
+/* Estilo do rótulo do seletor de idioma */
 .controls label {
   font-weight: 700;
   color: var(--secondary);
 }
 
+/* Aparência do seletor de idioma com borda arredondada */
 #language-select {
   padding: 12px 14px;
   border: 1px solid var(--border);
@@ -71,6 +81,7 @@ header p {
   min-width: 170px;
 }
 
+/* Estilo dos parágrafos e itens da lista */
 .content p,
 .content li {
   line-height: 1.9;
@@ -78,18 +89,21 @@ header p {
   max-width: 660px;
 }
 
+/* Remove estilo padrão da lista e centraliza o bloco */
 .content ul {
   margin: 16px auto 0;
   padding-left: 0;
   list-style: none;
 }
 
+/* Espaçamento e alinhamento dos itens da lista */
 .content li {
   position: relative;
   padding-left: 28px;
   text-align: left;
 }
 
+/* Adiciona um marcador personalizado antes de cada item de lista */
 .content li::before {
   content: "•";
   position: absolute;
@@ -99,10 +113,12 @@ header p {
   line-height: 1.4;
 }
 
+/* Espaço superior antes do rodapé com o botão */
 .footer {
   margin-top: 32px;
 }
 
+/* Estilo básico dos botões: fundo, borda arredondada e transição */
 .button {
   cursor: pointer;
   border: none;
@@ -115,16 +131,19 @@ header p {
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
+/* Efeito hover leve nos botões principais */
 .button:hover {
   transform: translateY(-1px);
   background: #7c3aed;
 }
 
+/* Outro estilo para botão secundário */
 .button.secondary {
   background: #ede9fe;
   color: var(--text);
 }
 
+/* Efeito hover para o botão secundário */
 .button.secondary:hover {
   background: #d8b4fe;
 }

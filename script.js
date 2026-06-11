@@ -1,3 +1,4 @@
+// Objeto com traduções para os idiomas disponíveis.
 const translations = {
   pt: {
     title: "Bem-vindo",
@@ -23,15 +24,18 @@ const translations = {
   },
 };
 
+// Captura os elementos do DOM que controlam o idioma e as traduções.
 const languageSelect = document.getElementById("language-select");
 const resetButton = document.getElementById("reset-button");
 const i18nElements = document.querySelectorAll("[data-i18n]");
 
+// Define um cookie com nome, valor e tempo de expiração em dias.
 function setCookie(name, value, days) {
   const expires = new Date(Date.now() + days * 864e5).toUTCString();
   document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
 }
 
+// Lê o valor de um cookie pelo nome, retornando undefined se não existir.
 function getCookie(name) {
   return document.cookie
     .split("; ")
@@ -39,6 +43,7 @@ function getCookie(name) {
     ?.split("=")[1];
 }
 
+// Aplica o idioma selecionado em todos os elementos marcados com data-i18n.
 function applyLanguage(lang) {
   const translation = translations[lang] || translations.pt;
   i18nElements.forEach((element) => {
@@ -47,24 +52,29 @@ function applyLanguage(lang) {
       element.textContent = translation[key];
     }
   });
+  // Atualiza o valor do seletor para refletir o idioma atual.
   languageSelect.value = lang;
 }
 
+// Inicializa o idioma ao carregar a página, usando cookie salvo ou padrão pt.
 function initLanguage() {
   const savedLang = getCookie("preferredLanguage");
   const lang = savedLang ? decodeURIComponent(savedLang) : "pt";
   applyLanguage(lang);
 }
 
+// Quando o usuário muda o idioma, salva a escolha em cookie e aplica a tradução.
 languageSelect.addEventListener("change", (event) => {
   const selectedLang = event.target.value;
   setCookie("preferredLanguage", selectedLang, 30);
   applyLanguage(selectedLang);
 });
 
+// Botão que redefine o idioma para português e atualiza o cookie.
 resetButton.addEventListener("click", () => {
   setCookie("preferredLanguage", "pt", 30);
   applyLanguage("pt");
 });
 
+// Chama a rotina de inicialização de idioma ao carregar o script.
 initLanguage();
